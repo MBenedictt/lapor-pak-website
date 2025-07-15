@@ -56,7 +56,7 @@ const Navbar = () => {
                     </li>
                     <li className="font-semibold max-md:hidden">
                         <Link to="/">
-                            <button className="cursor-pointer px-6 pt-1 py-2 border-2 border-red-600 text-red-600 font-semibold rounded-md hover:bg-red-600 hover:text-white transition">
+                            <button className="cursor-pointer px-6 pt-1 py-2 border-2 border-red-600 text-red-600 font-semibold hover:bg-red-600 hover:text-white transition">
                                 Login
                             </button>
                         </Link>

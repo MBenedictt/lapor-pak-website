@@ -22,7 +22,7 @@ const ReportPage = () => {
       views: 215,
       likes: 45,
       comments: 4,
-      image: "/laporan-img/lampu-mati.png",
+      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
       isBookmarked: false,
       category: "infrastruktur",
       location: "jl-sudirman"
@@ -143,7 +143,7 @@ const ReportPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      
+
       <div className="pt-[70px]">
         {/* Header Section */}
         <div className="w-full flex flex-col items-center justify-center bg-white px-20 pt-20 pb-10 max-md:px-10 max-md:py-10">
@@ -161,7 +161,7 @@ const ReportPage = () => {
         </div>
 
         {/* Reports Grid */}
-        <div className="px-20 max-md:px-10 pb-20">
+        <div className="px-20 max-md:px-10 pb-20 pt-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredReports.map((report) => (
               <ReportCard key={report.id} report={report} />
