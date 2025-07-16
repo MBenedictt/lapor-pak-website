@@ -2,6 +2,7 @@
 import { MessageCircle, Bookmark, Share, Eye, ArrowBigUp, ArrowBigDown, MoreVertical, ExternalLink, MapPin } from "lucide-react";
 import { useState } from "react";
 import Tooltip from "./Tooltip";
+import { Link } from "react-router-dom";
 import DropdownInfo from "./DropdownInfo";
 
 const ReportCard = ({ report }) => {
@@ -98,9 +99,11 @@ const ReportCard = ({ report }) => {
           </div>
 
           <div className="flex items-center space-x-2">
-            <button className=" flex items-center gap-1 cursor-pointer px-3 py-1 border-2 border-red-600 text-red-600 font-semibold rounded-md hover:bg-red-600 hover:text-white transition max-md:rounded-none max-md:w-full text-sm">
-              <span> Baca Laporan </span> <ExternalLink className="w-3 h-3" />
-            </button>
+             <Link to="/report/detail">
+                <button className=" flex items-center gap-1 cursor-pointer px-3 py-1 border-2 border-red-600 text-red-600 font-semibold rounded-md hover:bg-red-600 hover:text-white transition max-md:rounded-none max-md:w-full text-sm">
+                  <span> Baca Laporan </span> <ExternalLink className="w-3 h-3" />
+                </button>
+              </Link>
             <DropdownInfo options={[
               { label: 'Share' },
               { label: 'Hide' },
