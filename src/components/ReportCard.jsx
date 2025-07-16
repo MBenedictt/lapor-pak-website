@@ -100,7 +100,7 @@ const ReportCard = ({ report }) => {
 
           <div className="flex items-center space-x-2">
              <Link to="/report/detail">
-                <button className=" flex items-center gap-1 cursor-pointer px-3 py-1 border-2 border-red-600 text-red-600 font-semibold rounded-md hover:bg-red-600 hover:text-white transition max-md:rounded-none max-md:w-full text-sm">
+                <button className=" flex items-center gap-1 cursor-pointer px-3 py-1 border-2 border-red-600 text-red-600 font-semibold hover:bg-red-600 hover:text-white transition max-md:rounded-none max-md:w-full text-sm">
                   <span> Baca Laporan </span> <ExternalLink className="w-3 h-3" />
                 </button>
               </Link>
