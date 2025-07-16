@@ -9,7 +9,7 @@ import { Tooltip } from '../components/Tooltip';
 import { Eye, ArrowBigUp, ArrowBigDown, MessageCircle, Bookmark, Share, SendHorizontal, Copy } from 'lucide-react';
 
 const ReportDetailPage = () => {
-    const mainReport = {
+    const [mainReport, setMainReport] = useState({
         id: 1,
         title: "Lampu Lalu Lintas Mati di Perempatan Jalan Sudirman",
         author: "warga01",
@@ -18,17 +18,23 @@ const ReportDetailPage = () => {
         views: 215,
         upvotes: 48, 
         downvotes: 3,
-        comments: 4,
+        comments: 3,
         image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=450&fit=crop",
         initialBookmark: false, 
         category: "infrastruktur",
         location: "jl-sudirman",
         description: "Lampu lalu lintas di perempatan Jalan Sudirman sudah mati total selama 2 hari terakhir. Kondisi ini sangat membahayakan pengendara, terutama pada jam sibuk pagi dan sore hari. Beberapa kali hampir terjadi kecelakaan. Mohon pihak terkait segera melakukan perbaikan."
-    };
+    });
 
     const [score, setScore] = useState(mainReport.upvotes - mainReport.downvotes);
     const [userVote, setUserVote] = useState(null); 
     const [isBookmarked, setIsBookmarked] = useState(mainReport.initialBookmark);
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            handleAddComment();
+        }
+    }
 
     const otherReports = [
         {
@@ -118,6 +124,8 @@ const ReportDetailPage = () => {
         navigator.clipboard.writeText(window.location.href);
         alert("Link laporan disalin ke clipboard!");
     };
+
+    
     
     const handleAddComment = () => {
         if (newComment.trim() === "") return;
@@ -130,6 +138,10 @@ const ReportDetailPage = () => {
             replies: []
         };
         setComments([newCommentObject, ...comments]);
+        setMainReport(prevState => ({
+            ...prevState, 
+            comments: prevState.comments + 1
+        }));
         setNewComment("");
     };
 
@@ -179,7 +191,7 @@ const ReportDetailPage = () => {
                                                     <MessageCircle className="w-4 h-4 text-gray-600 hover:text-blue-600 cursor-pointer" />
                                                 </button>
                                             </Tooltip>
-                                            <span className="text-gray-600 text-sm">{mainReport.comments}</span>
+                                            <span className="text-gray-600 text-sm commentCount">{mainReport.comments}</span>
                                         </div>
                                     </div>
                                     <div className="flex items-center space-x-2">
@@ -207,6 +219,7 @@ const ReportDetailPage = () => {
                                     onChange={(e) => setNewComment(e.target.value)}
                                     className="p-3 w-11/12 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
                                     rows="4"
+                                    onKeyDown={handleKeyPress}
                                     placeholder="Tulis komentar Anda di sini..."
                                 ></input>
                                     <button
@@ -228,7 +241,7 @@ const ReportDetailPage = () => {
                         <div className="bg-white p-4 rounded-lg shadow-md sticky top-[90px]">
                             
                             <div className="mb-6">
-                                <h4 className="font-semibold text-center mb-4">Rekomendasikan Laporan Ini?</h4>
+                                 <h3 className="text-lg font-bold border-t border-gray-200 pt-4 pb-3 mb-4">Bagikan Laporan Ini</h3>
                                 <div className="grid grid-cols-4 gap-2 text-center">
                                     <button onClick={handleShare} className="flex flex-col items-center p-2 rounded-lg hover:bg-gray-100">
                                         <div className="w-10 h-10 flex items-center justify-center bg-gray-200 rounded-full">
@@ -257,7 +270,7 @@ const ReportDetailPage = () => {
                                 </div>
                             </div>
                             
-                            <h3 className="text-lg font-bold border-t border-gray-200 pt-4 pb-3 mb-4">Laporan Populer Lainnya</h3>
+                            <h3 className="text-lg font-bold border-t border-gray-300 pt-4 pb-3 mb-4">Lihat Laporan Lainnya</h3>
                             <div className="space-y-4">
                                 {otherReports.map(report => (
                                     <Link to={`/laporan/${report.id}`} key={report.id} className="block group">

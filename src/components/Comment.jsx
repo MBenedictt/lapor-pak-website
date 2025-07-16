@@ -63,18 +63,18 @@ const Comment = ({ comment }) => {
                     <div className="flex items-center space-x-1">
                         <Tooltip message="Upvote">
                             <button onClick={() => handleVote('up')}>
-                                <ArrowBigUp className={`w-5 h-5 cursor-pointer ${userVote === 'up' ? 'text-red-600 fill-red-600' : 'text-gray-600 hover:text-red-600'}`} />
+                                <ArrowBigUp className={`w-5 h-5 cursor-pointer ${userVote === 'up' ? 'text-green-600 fill-green-600' : 'text-gray-600 hover:text-green-600'}`} />
                             </button>
                         </Tooltip>
                         <span className="text-gray-800 text-sm font-bold w-4 text-center">{votes}</span>
                         <Tooltip message="Downvote">
                             <button onClick={() => handleVote('down')}>
-                                <ArrowBigDown className={`w-5 h-5 cursor-pointer ${userVote === 'down' ? 'text-blue-600 fill-blue-600' : 'text-gray-600 hover:text-blue-600'}`} />
+                                <ArrowBigDown className={`w-5 h-5 cursor-pointer ${userVote === 'down' ? 'text-red-600 fill-red-600' : 'text-gray-600 hover:text-red-600'}`} />
                             </button>
                         </Tooltip>
                     </div>
                     <Tooltip message="Balas">
-                        <button onClick={() => setShowReplyForm(!showReplyForm)} className="flex items-center gap-1 font-semibold hover:text-red-600">
+                        <button onClick={() => setShowReplyForm(!showReplyForm)} className="flex items-center gap-1 font-semibold hover:text-blue-600">
                             <MessageSquareReply className="w-4 h-4" />
                             <span>Balas</span>
                         </button>
@@ -90,6 +90,12 @@ const Comment = ({ comment }) => {
                             onChange={(e) => setReplyText(e.target.value)}
                             className="w-full p-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-1 focus:ring-red-500"
                             rows="2"
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    e.preventDefault();
+                                    handleAddReply();
+                                }
+                            }}
                             placeholder="Tulis balasan..."
                         ></input>
                         <div className="flex justify-end gap-2 mt-2">
