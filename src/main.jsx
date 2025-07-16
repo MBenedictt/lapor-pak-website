@@ -5,6 +5,7 @@ import './index.css'
 import ErrorPage from './pages/ErrorPage';
 import HomePage from './pages/HomePage';
 import ReportPage from './pages/ReportPage';
+import DetailPage from './pages/DetailPage';
 
 const router = createBrowserRouter([
   {
@@ -16,10 +17,10 @@ const router = createBrowserRouter([
     path: "/report",
     element: <ReportPage />
   },
-  // {
-  //   path: "/report/detail",
-  //   element: <NamaPagenya />
-  // },
+  {
+    path: "/report/detail",
+    element: <DetailPage />
+  },
   // {
   //   path: "/submit",
   //   element: <NamaPagenya />

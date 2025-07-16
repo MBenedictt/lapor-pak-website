@@ -36,7 +36,7 @@ const Navbar = () => {
             <div className={`flex justify-between items-center px-20 max-lg:px-10 max-md:px-5 transition-all duration-300 ease-in-out ${showNavbar ? 'opacity-100' : 'opacity-0'} h-full`}>
                 <div className='flex items-center'>
                     <Link to="/" className="flex items-center">
-                        <img src="logo.png" alt="logo" className="w-8 h-8 max-md:ml-3" />
+                        <img src="/logo.png" alt="logo" className="w-8 h-8 max-md:ml-3" />
                         <h1 className="font-semibold text-2xl text-black ml-3 pb-1">lapor<span className="text-red-600 font-bold">PAK</span></h1>
                     </Link>
                 </div>
