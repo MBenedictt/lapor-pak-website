@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import SearchFilter from "../components/SearchFilter";
 import ReportCard from "../components/ReportCard";
+import Footer from "../components/Footer";
 
 const ReportPage = () => {
   const [reports, setReports] = useState([]);
@@ -177,6 +178,8 @@ const ReportPage = () => {
           )}
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };
