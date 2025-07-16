@@ -1,5 +1,7 @@
 // import React from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faInstagram, faWhatsapp, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import ReportCard from "../components/ReportCard";
@@ -58,7 +60,7 @@ const HomePage = () => {
                 <div className="flex max-[991px]:flex-col-reverse justify-between items-center w-full gap-10">
                     <div className="w-7/12 max-[991px]:w-full mb-10 md:mb-0 max-sm:px-5">
                         <h1 className="text-5xl max-sm:text-4xl font-bold text-black mb-6 max-sm:text-center leading-[60px] max-sm:leading-[50px]">
-                            lapor<span className="text-red-600">PAK</span> by <span className="text-red-600">Dinas Perhubungan®</span>
+                            lapor<span className="text-red-600">PAK</span> by <span className="text-red-600">City Department®</span>
                         </h1>
                         <p className="text-gray-700 mb-8 leading-relaxed max-sm:text-center">
                             Punya keluhan soal lingkungan kota? Sampaikan langsung di LaporPAK! Kami adalah platform pengaduan terpadu yang siap menjembatani suara Anda dengan pihak berwenang. Bersama, kita wujudkan perubahan.
@@ -166,33 +168,39 @@ const HomePage = () => {
             </div>
 
             {/* Footer Section */}
-            {/* <div className="bg-gray-50 py-12 px-20 max-md:px-5">
-                <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10">
-                    <div className="w-5/12 max-[991px]:w-full flex justify-center relative">
-                        <div className="relative w-96 h-96 max-lg:w-72 rounded-full max-lg:h-72 overflow-hidden">
-                            <img
-                                src="/images/thumbsup.png"
-                                alt="User using phone"
-                                className="object-cover w-full h-full"
-                            />
-                        </div>
-                    </div>
-                    <div className="max-md:text-center lg:text-left w-full lg:w-8/12 max-md:w-3/4">
-                        <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-                            Ada Kendala?
-                        </h2>
-                        <p className="text-gray-700 mb-6">
-                            Silakan kirim hubungi customer service kami atau kontak di bawah ini untuk informasi lebih lanjut.
-                        </p>
-                        <a
-                            href="https://www.civicplus.com"
-                            className="bg-red-600 text-white font-semibold px-6 py-3 rounded hover:bg-red-700 transition"
-                        >
-                            Visit Us
-                        </a>
+            <div className="bg-gray-50 pt-20 px-20 max-md:px-5 flex flex-col items-center">
+                <div className="flex flex-col items-center justify-center text-center gap-5 max-md:w-full">
+                    <h1 className="text-5xl font-bold text-black max-sm:text-4xl">Jangan Lewatkan Update Terbaru.</h1>
+                    <p className="text-lg max-sm:text-sm leading-relaxed text-gray-600">Kami akan mengirimkan kabar terbaru seputar layanan dan informasi penting lainnya langsung ke inbox Anda.</p>
+                    <form className="w-full border-t-1 border-b-1 p-4 flex gap-5 my-4 max-sm:flex-col max-md:py-6">
+                        <input
+                            type="email"
+                            placeholder="Masukkan alamat email kamu"
+                            className="w-9/12 max-sm:w-full px-5 py-2 max-md:py-3 bg-gray-200 focus:outline-none focus:bg-red-50 focus:ring-2 focus:ring-red-300"
+                        />
+                        <button className="w-3/12 max-sm:w-full cursor-pointer px-6 py-3 border-2 border-red-600 text-red-600 font-semibold rounded-none hover:bg-red-600 hover:text-white transition">
+                            Registrasi Akun
+                        </button>
+                    </form>
+                    <div className="grid grid-cols-4 gap-10 max-sm:gap-5">
+                        <Link to="/" className="bg-red-600 rounded-full w-10 h-10 flex items-center justify-center text-white">
+                            <FontAwesomeIcon icon={faFacebookF} />
+                        </Link>
+                        <Link to="/" className="bg-red-600 rounded-full w-10 h-10 flex items-center justify-center text-white">
+                            <FontAwesomeIcon icon={faInstagram} />
+                        </Link>
+                        <Link to="/" className="bg-red-600 rounded-full w-10 h-10 flex items-center justify-center text-white">
+                            <FontAwesomeIcon icon={faTwitter} />
+                        </Link>
+                        <Link to="/" className="bg-red-600 rounded-full w-10 h-10 flex items-center justify-center text-white">
+                            <FontAwesomeIcon icon={faWhatsapp} />
+                        </Link>
                     </div>
                 </div>
-            </div> */}
+                <div className='my-10 text-center'>
+                    <p>© 2025 CityDept | <Link to="/" className='underline'>Contacts</Link> | <Link to="/" className='underline'>Terms of Use</Link> | <Link to="/" className='underline'>Privacy Policy</Link> | <Link to="/" className='underline'>Blog</Link></p>
+                </div>
+            </div>
         </div>
     );
 }
