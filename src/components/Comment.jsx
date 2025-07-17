@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Tooltip } from './Tooltip';
 import { ArrowBigUp, ArrowBigDown, MessageSquareReply, User } from 'lucide-react';
+import DropdownInfo from './DropdownInfo';
 
 const Comment = ({ comment, isReply, onReplySubmit }) => {
 
@@ -38,7 +39,7 @@ const Comment = ({ comment, isReply, onReplySubmit }) => {
             votes: 0,
             timestamp: 'Baru saja',
             replies: [],
-            replyingTo: comment.author 
+            replyingTo: comment.author
         };
         onReplySubmit(newReply, comment.id);
         setReplyText("");
@@ -48,7 +49,7 @@ const Comment = ({ comment, isReply, onReplySubmit }) => {
     const replies = comment.replies || [];
 
     return (
-        <div className={isReply ? "ml-4 md:ml-8" : ""}>
+        <div className={isReply ? "ml-4 md:ml-8 flex justify-between items-center" : "flex justify-between items-center"}>
             <div className="flex gap-3">
                 <div className="w-8 h-8 bg-black rounded-full flex-shrink-0 mt-1 flex items-center justify-center">
                     <User className="w-5 h-5 text-white" />
@@ -59,7 +60,7 @@ const Comment = ({ comment, isReply, onReplySubmit }) => {
                         <span className="font-semibold">{comment.author}</span>
                         {comment.replyingTo && (
                             <span className="text-gray-500 font-normal flex items-center gap-1">
-                            <span className='font-bold'>&gt;</span> {comment.replyingTo}
+                                <span className='font-bold'>&gt;</span> {comment.replyingTo}
                             </span>
                         )}
                         <span className="text-gray-500">• {comment.timestamp}</span>
@@ -114,6 +115,10 @@ const Comment = ({ comment, isReply, onReplySubmit }) => {
                     )}
                 </div>
             </div>
+            <DropdownInfo options={[
+                { label: 'Delete' },
+                { label: 'Report' },
+            ]} />
         </div>
     );
 }

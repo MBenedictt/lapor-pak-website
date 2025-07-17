@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from 'lucide-react';
+import { Menu, X, CirclePlus } from 'lucide-react';
 
 const Navbar = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -40,7 +40,7 @@ const Navbar = () => {
                         <h1 className="font-semibold text-2xl text-black ml-3 pb-1">lapor<span className="text-red-600 font-bold">PAK</span></h1>
                     </Link>
                 </div>
-                <ul className="flex items-center gap-10">
+                <ul className="flex items-center gap-8">
                     <li className="font-semibold max-md:hidden">
                         <Link to="/" className="relative group flex">
                             <span className="group-hover:after:w-full after:w-0 after:h-0.5 after:bg-black after:absolute after:bottom-0 after:left-0 after:transition-all after:duration-300">
@@ -55,11 +55,16 @@ const Navbar = () => {
                             </span>
                         </Link>
                     </li>
-                    <li className="font-semibold max-md:hidden">
-                        <Link to="/">
-                            <button className="cursor-pointer px-6 pt-1 py-2 border-2 border-red-600 text-red-600 font-semibold hover:bg-red-600 hover:text-white transition">
-                                Login
+                    <li className="font-semibold max-md:hidden flex items-center">
+                        <Link to="/create">
+                            <button className="cursor-pointer px-4 py-2 border-2 bg-red-600 text-white font-semibold hover:bg-red-700 transition mr-7 flex items-center gap-2">
+                                <CirclePlus className="w-5 h-5 mt-1" /> Lapor
                             </button>
+                        </Link>
+                        <Link to="/" className="bg-black rounded-full p-1 text-white hover:bg-slate-400 transition">
+                            <span className="w-7 h-7 flex items-center justify-center font-bold">
+                                H
+                            </span>
                         </Link>
                     </li>
                 </ul>
@@ -93,6 +98,13 @@ const Navbar = () => {
                             <Link to="/report" className="relative group flex w-fit">
                                 <span className="group-hover:after:w-full after:w-0 after:h-0.5 after:bg-black after:absolute after:bottom-0 after:left-0 after:transition-all after:duration-300">
                                     Reports
+                                </span>
+                            </Link>
+                        </li>
+                        <li className="font-medium text-2xl py-4">
+                            <Link to="/create" className="relative group flex w-fit">
+                                <span className="group-hover:after:w-full after:w-0 after:h-0.5 after:bg-black after:absolute after:bottom-0 after:left-0 after:transition-all after:duration-300">
+                                    Buat Laporan
                                 </span>
                             </Link>
                         </li>

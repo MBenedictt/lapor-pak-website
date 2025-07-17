@@ -96,7 +96,7 @@ const HomePage = () => {
             </div>
 
             {/* Guide Section */}
-            <div className="bg-red-50 w-full px-30 max-[1280px]:px-20 py-20 max-md:px-10 max-md:py-10 flex flex-col items-center justify-center max-[991px]:mt-[70px]">
+            <div className="bg-red-50 w-full px-30 max-[1280px]:px-20 py-20 max-md:px-10 max-md:py-10 flex flex-col items-center justify-center">
                 <h1 className="text-5xl font-bold text-black text-center mb-15 max-sm:text-4xl max-sm:mb-10">Cara Membuat Laporan</h1>
                 <div className="w-full grid grid-cols-3 gap-5 max-[991px]:grid-cols-1">
                     <div className="flex flex-col items-center">
@@ -148,7 +148,7 @@ const HomePage = () => {
             <div className="w-full px-30 max-[1280px]:px-20 py-20 max-md:px-10 max-sm:px-5 max-md:py-10">
                 <div className="flex justify-between items-center mb-15 max-sm:mb-10 max-sm:flex-col">
                     <h1 className="text-5xl font-bold text-black max-sm:text-4xl max-sm:mb-5 max-sm:text-center">Laporan Teratas</h1>
-                    <Link to="/">
+                    <Link to="/report">
                         <button className="cursor-pointer px-6 py-3 border-2 border-red-600 text-red-600 font-semibold rounded-none hover:bg-red-600 hover:text-white transition max-md:w-full">
                             Lihat Semua
                         </button>

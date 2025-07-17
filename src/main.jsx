@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        index: true, 
+        index: true,
         element: <HomePage />,
       },
       {
@@ -28,7 +28,7 @@ const router = createBrowserRouter([
         element: <ReportPage />,
       },
       {
-        path: "report/detail", 
+        path: "report/detail",
         element: <DetailPage />,
       },
       {
