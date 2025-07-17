@@ -51,7 +51,7 @@ const Navbar = () => {
                     <li className="font-semibold max-md:hidden">
                         <Link to="/report" className="relative group flex">
                             <span className="group-hover:after:w-full after:w-0 after:h-0.5 after:bg-black after:absolute after:bottom-0 after:left-0 after:transition-all after:duration-300">
-                                Reports
+                                Laporan
                             </span>
                         </Link>
                     </li>

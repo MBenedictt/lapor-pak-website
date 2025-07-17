@@ -72,12 +72,12 @@ const HomePage = () => {
                         <div className="flex max-md:flex-col gap-4 max-sm:justify-center w-full">
                             <Link to="/">
                                 <button className="cursor-pointer px-6 py-3 border-2 border-red-600 text-red-600 font-semibold rounded-none hover:bg-red-600 hover:text-white transition max-md:w-full">
-                                    Registrasi Akun
+                                    Registrasi akun
                                 </button>
                             </Link>
                             <Link to="/create">
                                 <button className="cursor-pointer px-6 py-3 border-2 border-black text-black font-semibold rounded-none hover:bg-black hover:text-white transition max-md:w-full">
-                                    Tulis Laporan Disini
+                                    Tulis laporan di sini
                                 </button>
                             </Link>
                         </div>
