@@ -1,5 +1,3 @@
-// src/pages/ReportDetailPage.js
-
 import { useState, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
@@ -29,6 +27,19 @@ const ReportDetailPage = () => {
     const [score, setScore] = useState(mainReport.upvotes - mainReport.downvotes);
     const [userVote, setUserVote] = useState(null); 
     const [isBookmarked, setIsBookmarked] = useState(mainReport.initialBookmark);
+
+    const flattenComments = (comments, isReply = false) => {
+        let flatList = [];
+        for (const comment of comments) {
+            flatList.push({ ...comment, isReply: isReply });
+            
+            if (comment.replies && comment.replies.length > 0) {
+                flatList = flatList.concat(flattenComments(comment.replies, true));
+            }
+        }
+        return flatList;
+    };
+
 
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
@@ -145,6 +156,27 @@ const ReportDetailPage = () => {
         setNewComment("");
     };
 
+     const handleReplySubmit = (newReply, parentId) => {
+        const addReplyRecursively = (nodes, targetId, reply) => {
+            return nodes.map(node => {
+                if (node.id === targetId) {
+                    return { ...node, replies: [reply, ...node.replies] };
+                }
+                if (node.replies && node.replies.length > 0) {
+                    return { ...node, replies: addReplyRecursively(node.replies, targetId, reply) };
+                }
+                return node;
+            });
+        };
+
+        const updatedComments = addReplyRecursively(comments, parentId, newReply);
+        setComments(updatedComments);
+        setMainReport(prevState => ({
+            ...prevState,
+            comments: prevState.comments + 1
+        }));
+    };
+
     const shareUrl = window.location.href;
     const shareText = `Lihat laporan penting ini: "${mainReport.title}"`;
 
@@ -230,8 +262,13 @@ const ReportDetailPage = () => {
                                     </button>
                             </div>
                             <div className="mt-6 space-y-6">
-                                {comments.map(comment => (
-                                    <Comment key={comment.id} comment={comment} />
+                                {flattenComments(comments).map(comment => (
+                                    <Comment
+                                        key={comment.id}
+                                        comment={comment}
+                                        isReply={comment.isReply}
+                                        onReplySubmit={handleReplySubmit}
+                                    />
                                 ))}
                             </div>
                         </div>
