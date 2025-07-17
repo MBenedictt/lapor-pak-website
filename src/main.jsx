@@ -1,7 +1,12 @@
-import { StrictMode } from 'react'
-import ReactDOM from 'react-dom/client'
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import './index.css'
+// main.jsx
+
+import { StrictMode } from 'react';
+import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import './index.css';
+
+// Import komponen halaman dan layout
+import RootLayout from './pages/RootLayout'; // <-- IMPORT LAYOUT BARU
 import ErrorPage from './pages/ErrorPage';
 import HomePage from './pages/HomePage';
 import ReportPage from './pages/ReportPage';
@@ -11,24 +16,31 @@ import CreatePage from './pages/CreatePage';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
-    errorElement: <ErrorPage />
-  },
-  {
-    path: "/report",
-    element: <ReportPage />
-  },
-  {
-    path: "/report/detail",
-    element: <DetailPage />
-  },
-  {
-    path: "/create",
-    element: <CreatePage />
+    element: <RootLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        index: true, 
+        element: <HomePage />,
+      },
+      {
+        path: "report",
+        element: <ReportPage />,
+      },
+      {
+        path: "report/detail", 
+        element: <DetailPage />,
+      },
+      {
+        path: "create",
+        element: <CreatePage />,
+      },
+    ]
   },
 ]);
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <RouterProvider router={router} />
   </StrictMode>,
-)
+);
