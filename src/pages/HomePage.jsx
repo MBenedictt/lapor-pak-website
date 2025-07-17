@@ -75,7 +75,7 @@ const HomePage = () => {
                                     Registrasi Akun
                                 </button>
                             </Link>
-                            <Link to="/">
+                            <Link to="/create">
                                 <button className="cursor-pointer px-6 py-3 border-2 border-black text-black font-semibold rounded-none hover:bg-black hover:text-white transition max-md:w-full">
                                     Tulis Laporan Disini
                                 </button>

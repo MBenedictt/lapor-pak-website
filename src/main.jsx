@@ -6,6 +6,7 @@ import ErrorPage from './pages/ErrorPage';
 import HomePage from './pages/HomePage';
 import ReportPage from './pages/ReportPage';
 import DetailPage from './pages/DetailPage';
+import CreatePage from './pages/CreatePage';
 
 const router = createBrowserRouter([
   {
@@ -21,10 +22,10 @@ const router = createBrowserRouter([
     path: "/report/detail",
     element: <DetailPage />
   },
-  // {
-  //   path: "/submit",
-  //   element: <NamaPagenya />
-  // },
+  {
+    path: "/create",
+    element: <CreatePage />
+  },
 ]);
 ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>

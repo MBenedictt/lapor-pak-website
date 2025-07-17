@@ -7,7 +7,7 @@ const Footer = () => (
         <div className="flex flex-col items-center justify-center text-center gap-5 max-md:w-full">
             <h1 className="text-5xl font-bold text-black max-sm:text-4xl leading-[60px] max-sm:leading-[50px]">Jangan Lewatkan Update Terbaru.</h1>
             <p className="leading-relaxed text-gray-600">Kami akan mengirimkan kabar terbaru seputar layanan dan informasi penting lainnya langsung ke inbox Anda.</p>
-            <form className="w-full border-t-1 border-b-1 p-4 flex gap-5 my-4 max-sm:flex-col max-md:py-6">
+            <form className="w-full border-t-1 border-b-1 border-gray-400 px-4 py-6 flex gap-5 my-5 max-sm:flex-col max-md:py-6">
                 <input
                     type="email"
                     placeholder="Masukkan alamat email kamu"
