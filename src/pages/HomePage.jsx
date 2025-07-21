@@ -4,55 +4,97 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import ReportCard from "../components/ReportCard";
 import Footer from "../components/Footer";
+import { useEffect, useState } from "react";
+
+const reports = [
+    {
+        id: 1,
+        title: "Lampu Lalu Lintas Mati di Perempatan Jalan Sudirman",
+        author: "warga01",
+        date: "2024-07-14",
+        tags: ["#lalu-lintas", "#lampu-mati", "#bahaya"],
+        views: 215,
+        likes: 45,
+        comments: 4,
+        image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
+        isBookmarked: false,
+        category: "infrastruktur",
+        location: "jl-sudirman"
+    },
+    {
+        id: 2,
+        title: "Trotoar Rusak Membahayakan Pejalan Kaki di Jalan Ahmad Yani",
+        author: "peduliakses",
+        date: "2024-07-12",
+        tags: ["#trotoar", "#aksesibilitas", "#jalanrusak"],
+        views: 342,
+        likes: 67,
+        comments: 12,
+        image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
+        isBookmarked: true,
+        category: "akses",
+        location: "jl-ahmad-yani"
+    },
+    {
+        id: 3,
+        title: "Angkot Parkir Sembarangan Menutup Akses Jalan Sekolah",
+        author: "guru_sd",
+        date: "2024-07-10",
+        tags: ["#angkot", "#parkirliar", "#keselamatan"],
+        views: 789,
+        likes: 123,
+        comments: 23,
+        image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
+        isBookmarked: false,
+        category: "transportasi",
+        location: "jl-thamrin"
+    },
+];
 
 const HomePage = () => {
-    const reports = [
-        {
-            id: 1,
-            title: "Lampu Lalu Lintas Mati di Perempatan Jalan Sudirman",
-            author: "warga01",
-            date: "2024-07-14",
-            tags: ["#lalu-lintas", "#lampu-mati", "#bahaya"],
-            views: 215,
-            likes: 45,
-            comments: 4,
-            image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
-            isBookmarked: false,
-            category: "infrastruktur",
-            location: "jl-sudirman"
-        },
-        {
-            id: 2,
-            title: "Trotoar Rusak Membahayakan Pejalan Kaki di Jalan Ahmad Yani",
-            author: "peduliakses",
-            date: "2024-07-12",
-            tags: ["#trotoar", "#aksesibilitas", "#jalanrusak"],
-            views: 342,
-            likes: 67,
-            comments: 12,
-            image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
-            isBookmarked: true,
-            category: "akses",
-            location: "jl-ahmad-yani"
-        },
-        {
-            id: 3,
-            title: "Angkot Parkir Sembarangan Menutup Akses Jalan Sekolah",
-            author: "guru_sd",
-            date: "2024-07-10",
-            tags: ["#angkot", "#parkirliar", "#keselamatan"],
-            views: 789,
-            likes: 123,
-            comments: 23,
-            image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
-            isBookmarked: false,
-            category: "transportasi",
-            location: "jl-thamrin"
-        },
-    ];
+    const [isLoading, setIsLoading] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const hasLoadedBefore = sessionStorage.getItem('hasLoadedBefore');
+
+        if (!hasLoadedBefore) {
+            setIsLoading(true);
+            setIsVisible(true);
+
+            // Prevent showing loader again in this session
+            sessionStorage.setItem('hasLoadedBefore', 'true');
+        }
+    }, []);
+
+    const handleImageLoad = () => {
+        if (isLoading) {
+            setIsLoading(false);
+            setTimeout(() => {
+                setIsVisible(false);
+            }, 500);
+        }
+    };
+
+    useEffect(() => {
+        if (isVisible) {
+            document.body.classList.add('overflow-hidden');
+        } else {
+            document.body.classList.remove('overflow-hidden');
+        }
+        return () => document.body.classList.remove('overflow-hidden');
+    }, [isVisible]);
 
     return (
         <div>
+            {isVisible && (
+                <div
+                    className={`fixed inset-0 flex items-center justify-center bg-white z-[9999] transition-all duration-500 ${isLoading ? 'translate-y-0' : '-translate-y-[100%]'
+                        }`}
+                >
+                    <div className="loader"></div>
+                </div>
+            )}
             <Navbar />
             {/* Hero Section */}
             <div className="w-full h-screen flex items-center justify-center bg-white px-30 max-[1280px]:px-20 max-md:px-10 max-md:py-10 max-[991px]:h-auto max-[991px]:mt-[70px] max-[991px]:py-20 max-sm:px-5">
@@ -89,6 +131,7 @@ const HomePage = () => {
                                 src="/images/mascot.png"
                                 alt="User using phone"
                                 className="object-cover w-full h-full"
+                                onLoad={handleImageLoad}
                             />
                         </div>
                     </div>
