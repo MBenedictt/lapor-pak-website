@@ -20,10 +20,10 @@ const ReportPage = () => {
   const [currentFilter, setCurrentFilter] = useState("all");
   const [currentSort, setCurrentSort] = useState("newest");
   const [currentLocation, setCurrentLocation] = useState("all");
-  
+
   // Pagination states
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemsPerPage] = useState(8); // 8 items per page for better grid layout
+  const [itemsPerPage] = useState(6); // 6 items per page for better grid layout
 
   // Contoh data dummy
   const sampleReports = [
@@ -236,7 +236,7 @@ const ReportPage = () => {
   const renderPaginationItems = () => {
     const items = [];
     const maxVisiblePages = 5;
-    
+
     if (totalPages <= maxVisiblePages) {
       // Show all pages if total pages is small
       for (let i = 1; i <= totalPages; i++) {
@@ -344,7 +344,7 @@ const ReportPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
             {currentItems.map((report) => (
               <ReportCard key={report.id} report={report} />
             ))}
@@ -364,16 +364,16 @@ const ReportPage = () => {
               <Pagination>
                 <PaginationContent>
                   <PaginationItem>
-                    <PaginationPrevious 
+                    <PaginationPrevious
                       onClick={() => handlePageChange(Math.max(1, currentPage - 1))}
                       className={`cursor-pointer ${currentPage === 1 ? 'pointer-events-none opacity-50' : ''}`}
                     />
                   </PaginationItem>
-                  
+
                   {renderPaginationItems()}
-                  
+
                   <PaginationItem>
-                    <PaginationNext 
+                    <PaginationNext
                       onClick={() => handlePageChange(Math.min(totalPages, currentPage + 1))}
                       className={`cursor-pointer ${currentPage === totalPages ? 'pointer-events-none opacity-50' : ''}`}
                     />

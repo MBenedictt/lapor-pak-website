@@ -86,7 +86,7 @@ const ReportCard = ({ report }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-lg max-w-sm border border-gray-200 flex flex-col justify-between">
+    <div className="bg-white rounded-lg overflow-hidden shadow-lg w-full border border-gray-200 flex flex-col justify-between">
       <div>
         {/* Header */}
         <div className="flex items-center justify-between p-4">
@@ -98,12 +98,12 @@ const ReportCard = ({ report }) => {
           </div>
 
           <div className="flex items-center space-x-2">
-             <Link to="/report/detail">
-                <button className="flex items-center gap-1 cursor-pointer px-3 py-1 border-2 bg-red-600 text-white font-semibold hover:bg-red-700 transition max-md:rounded-none max-md:w-full text-sm
+            <Link to="/report/detail">
+              <button className="flex items-center gap-1 cursor-pointer px-3 py-1 border-2 border-red-600 text-red-600 font-semibold hover:bg-red-600 hover:text-white transition max-md:rounded-none max-md:w-full text-sm
 ">
-                  <span> Baca Laporan </span> <ExternalLink className="w-3 h-3" />
-                </button>
-              </Link>
+                <span> Baca Laporan </span> <ExternalLink className="w-3 h-3 ml-1 mt-[1px]" />
+              </button>
+            </Link>
             <DropdownInfo options={[
               { label: 'Share' },
               { label: 'Hide' },
