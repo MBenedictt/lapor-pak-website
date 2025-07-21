@@ -10,7 +10,6 @@ const ReportCard = ({ report }) => {
     title,
     author,
     date,
-    tags,
     views,
     likes,
     comments,
@@ -87,7 +86,7 @@ const ReportCard = ({ report }) => {
   };
 
   return (
-    <div className="bg-white rounded-lg overflow-hidden shadow-lg max-w-sm border border-gray-200 flex flex-col justify-between">
+    <div className="bg-white rounded-lg overflow-hidden shadow-lg w-full border border-gray-200 flex flex-col justify-between">
       <div>
         {/* Header */}
         <div className="flex items-center justify-between p-4">
@@ -99,11 +98,12 @@ const ReportCard = ({ report }) => {
           </div>
 
           <div className="flex items-center space-x-2">
-             <Link to="/report/detail">
-                <button className=" flex items-center gap-1 cursor-pointer px-3 py-1 border-2 border-red-600 text-red-600 font-semibold hover:bg-red-600 hover:text-white transition max-md:rounded-none max-md:w-full text-sm">
-                  <span> Baca Laporan </span> <ExternalLink className="w-3 h-3" />
-                </button>
-              </Link>
+            <Link to="/report/detail">
+              <button className="flex items-center gap-1 cursor-pointer px-3 py-1 border-2 border-red-600 text-red-600 font-semibold hover:bg-red-600 hover:text-white transition max-md:rounded-none max-md:w-full text-sm
+">
+                <span> Baca Laporan </span> <ExternalLink className="w-3 h-3 ml-1 mt-[1px]" />
+              </button>
+            </Link>
             <DropdownInfo options={[
               { label: 'Share' },
               { label: 'Hide' },
@@ -118,20 +118,6 @@ const ReportCard = ({ report }) => {
           <h3 className="text-gray-900 text-lg font-semibold leading-tight">
             {title}
           </h3>
-        </div>
-
-        {/* Tags */}
-        <div className="px-4 pb-3">
-          <div className="flex flex-wrap gap-2">
-            {tags.map((tag, index) => (
-              <span
-                key={index}
-                className="text-gray-600 text-sm border border-gray-400 px-2 py-1"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
         </div>
 
         {/* Date and Location */}

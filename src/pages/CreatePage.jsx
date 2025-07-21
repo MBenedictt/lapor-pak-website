@@ -8,11 +8,36 @@ import Tooltip from "../components/Tooltip";
 import { Link } from "react-router-dom";
 
 const communities = [
-    { name: 'lapor/Kebersihan', quantity: '102', icon: <BrushCleaning className="w-6 h-6 text-white p-1" /> },
-    { name: 'lapor/JalanRusak', quantity: '78', icon: <TrafficCone className="w-6 h-6 text-orange-400 p-1" /> },
-    { name: 'lapor/Lingkungan', quantity: '53', icon: <Construction className="w-6 h-6 text-yellow-400 p-1" /> },
-    { name: 'lapor/Infrastruktur', quantity: '19', icon: <Trees className="w-6 h-6 text-green-400 p-1" /> },
-    { name: 'lapor/Kecelakaan', quantity: '2', icon: <Ambulance className="w-6 h-6 text-red-300 p-1" /> },
+    {
+        name: 'lapor/Kebersihan',
+        quantity: '102',
+        icon: <BrushCleaning className="w-6 h-6 text-slate-600 p-1" />,
+        bgColor: 'bg-slate-100'
+    },
+    {
+        name: 'lapor/JalanRusak',
+        quantity: '78',
+        icon: <TrafficCone className="w-6 h-6 text-orange-600 p-1" />,
+        bgColor: 'bg-orange-100'
+    },
+    {
+        name: 'lapor/Lingkungan',
+        quantity: '53',
+        icon: <Construction className="w-6 h-6 text-yellow-600 p-1" />,
+        bgColor: 'bg-yellow-100'
+    },
+    {
+        name: 'lapor/Infrastruktur',
+        quantity: '19',
+        icon: <Trees className="w-6 h-6 text-green-600 p-1" />,
+        bgColor: 'bg-green-100'
+    },
+    {
+        name: 'lapor/Kecelakaan',
+        quantity: '2',
+        icon: <Ambulance className="w-6 h-6 text-red-600 p-1" />,
+        bgColor: 'bg-red-100'
+    },
 ];
 
 const CreatePage = () => {
@@ -48,7 +73,7 @@ const CreatePage = () => {
                         <h1 className="font-bold text-blue-600">Draf <span className="bg-gray-400 text-white px-2 ml-1 pb-1 pt-0.5 rounded-lg">0</span></h1>
                     </div>
                     <div className="bg-white rounded shadow-md p-5">
-                        <div className="w-fit">
+                        <div className="w-fit max-sm:w-full">
                             <DropdownMenu Headertext="Pilih Kategori" options={[
                                 { label: 'Infrastruktur' },
                                 { label: 'Aksesibilitas' },
@@ -114,7 +139,7 @@ const CreatePage = () => {
                                                 placeholder="Tambahkan Lokasi"
                                                 value={location}
                                                 onChange={(e) => setLocation(e.target.value)}
-                                                className="flex-1 bg-transparent text-gray-500 outline-none border-none placeholder:text-gray-500 text-sm"
+                                                className="flex-1 bg-transparent text-gray-500 outline-none border-none placeholder:text-gray-500 text-sm max-sm:w-3/4"
                                             />
                                         </div>
                                         <Tooltip message={"Cari Lokasi di Peta"}>
@@ -191,7 +216,7 @@ const CreatePage = () => {
                         <ul>
                             {communities.map((com, index) => (
                                 <li key={index} className="flex items-center gap-3 hover:bg-gray-100 p-3 cursor-pointer">
-                                    <div className="p-1 bg-slate-600 rounded-full">
+                                    <div className={`p-1 rounded-full ${com.bgColor}`}>
                                         {com.icon}
                                     </div>
                                     <div>
