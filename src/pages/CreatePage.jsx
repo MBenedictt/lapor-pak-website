@@ -73,7 +73,7 @@ const CreatePage = () => {
                         <h1 className="font-bold text-blue-600">Draf <span className="bg-gray-400 text-white px-2 ml-1 pb-1 pt-0.5 rounded-lg">0</span></h1>
                     </div>
                     <div className="bg-white rounded shadow-md p-5">
-                        <div className="w-fit">
+                        <div className="w-fit max-sm:w-full">
                             <DropdownMenu Headertext="Pilih Kategori" options={[
                                 { label: 'Infrastruktur' },
                                 { label: 'Aksesibilitas' },
@@ -139,7 +139,7 @@ const CreatePage = () => {
                                                 placeholder="Tambahkan Lokasi"
                                                 value={location}
                                                 onChange={(e) => setLocation(e.target.value)}
-                                                className="flex-1 bg-transparent text-gray-500 outline-none border-none placeholder:text-gray-500 text-sm"
+                                                className="flex-1 bg-transparent text-gray-500 outline-none border-none placeholder:text-gray-500 text-sm max-sm:w-3/4"
                                             />
                                         </div>
                                         <Tooltip message={"Cari Lokasi di Peta"}>

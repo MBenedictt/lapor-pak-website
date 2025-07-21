@@ -33,7 +33,7 @@ const DropdownMenu = ({ Headertext, options = [] }) => {
                     e.stopPropagation();
                     setIsOpen(!isOpen);
                 }}
-                className="px-5 py-3 bg-gray-100 rounded hover:bg-blue-50 cursor-pointer flex items-center justify-between transition duration-300 border border-gray-200 hover:border-blue-200 w-[300px]"
+                className="px-5 py-3 bg-gray-100 rounded hover:bg-blue-50 cursor-pointer flex items-center justify-between transition duration-300 border border-gray-200 hover:border-blue-200 w-[300px] max-sm:w-full"
             >
                 <span className="text-gray-600 font-semibold">
                     {selected || Headertext}
