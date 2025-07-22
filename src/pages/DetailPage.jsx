@@ -17,10 +17,10 @@ const ReportDetailPage = () => {
         upvotes: 48, 
         downvotes: 3,
         comments: 3,
-        image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=450&fit=crop",
+        image: "https://awsimages.detik.net.id/community/media/visual/2024/06/11/lampu-merah-di-bundaran-marlin-pangandaran-mati_169.jpeg?w=600&q=90",
         initialBookmark: false, 
         category: "infrastruktur",
-        location: "jl-sudirman",
+        location: "Jl. Sudirman",
         description: "Lampu lalu lintas di perempatan Jalan Sudirman sudah mati total selama 2 hari terakhir. Kondisi ini sangat membahayakan pengendara, terutama pada jam sibuk pagi dan sore hari. Beberapa kali hampir terjadi kecelakaan. Mohon pihak terkait segera melakukan perbaikan."
     });
 

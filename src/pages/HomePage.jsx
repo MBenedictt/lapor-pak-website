@@ -16,10 +16,10 @@ const reports = [
         views: 215,
         likes: 45,
         comments: 4,
-        image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
+        image: "https://awsimages.detik.net.id/community/media/visual/2024/06/11/lampu-merah-di-bundaran-marlin-pangandaran-mati_169.jpeg?w=600&q=90",
         isBookmarked: false,
         category: "infrastruktur",
-        location: "jl-sudirman"
+        location: "Jl. Sudirman"
     },
     {
         id: 2,
@@ -30,10 +30,10 @@ const reports = [
         views: 342,
         likes: 67,
         comments: 12,
-        image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
+        image: "https://static.republika.co.id/uploads/images/inpicture_slide/trotoar-untuk-pejalan-kaki-di-jalan-tb-simatupang-_190418200558-610.jpg",
         isBookmarked: true,
         category: "akses",
-        location: "jl-ahmad-yani"
+        location: "Jl. Ahmad Yani"
     },
     {
         id: 3,
@@ -44,10 +44,10 @@ const reports = [
         views: 789,
         likes: 123,
         comments: 23,
-        image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
+        image: "https://asset-2.tstatic.net/kupang/foto/bank/images/Angkota-Kupang-Mogok.jpg",
         isBookmarked: false,
         category: "transportasi",
-        location: "jl-thamrin"
+        location: "Jl. Thamrin"
     },
 ];
 

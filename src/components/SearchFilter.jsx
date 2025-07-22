@@ -56,12 +56,12 @@ const SearchFilter = ({ onSearch, onFilter, onSort, onLocationFilter }) => {
 
 const locationOptions = [
   { value: "all", label: "Semua Lokasi" },
-  { value: "jl-sudirman", label: "Jl. Sudirman" },
-  { value: "jl-thamrin", label: "Jl. Thamrin" },
-  { value: "jl-hr-rasuna-said", label: "Jl. HR Rasuna Said" },
-  { value: "jl-ahmad-yani", label: "Jl. Ahmad Yani" },
-  { value: "jl-diponegoro", label: "Jl. Diponegoro" },
-  { value: "jl-gatot-subroto", label: "Jl. Gatot Subroto" }
+  { value: "Jl. Sudirman", label: "Jl. Sudirman" },
+  { value: "Jl. Thamrin", label: "Jl. Thamrin" },
+  { value: "Jl. HR Rasuna Said", label: "Jl. HR Rasuna Said" },
+  { value: "Jl. Ahmad Yani", label: "Jl. Ahmad Yani" },
+  { value: "Jl. Diponegoro", label: "Jl. Diponegoro" },
+  { value: "Jl. Gatot Subroto", label: "Jl. Gatot Subroto" }
 ];
 
   // Filter location options based on search term
@@ -72,7 +72,7 @@ const locationOptions = [
   return (
     <div className="w-full max-w-4xl mx-auto mb-8">
       {/* Search Bar with Sort and Location */}
-      <div className="flex items-center gap-3 mb-6">
+      <div className="flex flex-col md:flex-row md:items-center gap-3 mb-6">
         <div className="relative flex-1">
           <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
           <input
@@ -84,6 +84,7 @@ const locationOptions = [
           />
         </div>
 
+        <div className="flex gap-3 md:gap-3">
         {/* Sort Dropdown */}
         <div className="relative">
           <button
@@ -163,6 +164,7 @@ const locationOptions = [
             </div>
           )}
         </div>
+      </div>
       </div>
 
       {/* Category Filter Pills */}

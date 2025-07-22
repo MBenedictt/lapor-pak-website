@@ -35,10 +35,10 @@ const ReportPage = () => {
       views: 215,
       likes: 45,
       comments: 4,
-      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
+      image: "https://awsimages.detik.net.id/community/media/visual/2024/06/11/lampu-merah-di-bundaran-marlin-pangandaran-mati_169.jpeg?w=600&q=90",
       isBookmarked: false,
       category: "infrastruktur",
-      location: "jl-sudirman"
+      location: "Jl. Sudirman"
     },
     {
       id: 2,
@@ -48,10 +48,10 @@ const ReportPage = () => {
       views: 342,
       likes: 67,
       comments: 12,
-      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
+      image: "https://static.republika.co.id/uploads/images/inpicture_slide/trotoar-untuk-pejalan-kaki-di-jalan-tb-simatupang-_190418200558-610.jpg",
       isBookmarked: true,
       category: "akses",
-      location: "jl-ahmad-yani"
+      location: "Jl. Ahmad Yani"
     },
     {
       id: 3,
@@ -61,10 +61,10 @@ const ReportPage = () => {
       views: 789,
       likes: 123,
       comments: 23,
-      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
+      image: "https://asset-2.tstatic.net/kupang/foto/bank/images/Angkota-Kupang-Mogok.jpg",
       isBookmarked: false,
       category: "transportasi",
-      location: "jl-thamrin"
+      location: "Jl. Thamrin"
     },
     {
       id: 4,
@@ -74,23 +74,23 @@ const ReportPage = () => {
       views: 456,
       likes: 89,
       comments: 16,
-      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
+      image: "https://asset.kompas.com/crops/cOidyNWqHEdnvx2cA9MOo6uFpsg=/0x0:0x0/1200x800/data/photo/2023/05/11/645cba808a376.jpg",
       isBookmarked: false,
       category: "jalan",
-      location: "jl-diponegoro"
+      location: "Jl. Diponegoro"
     },
     {
       id: 5,
-      title: "Rambu Lalu Lintas Hilang di Persimpangan Utama",
+      title: "Rambu Larangan Parkir Roboh di Persimpangan Utama",
       author: "warga02",
       date: "2024-07-06",
       views: 324,
       likes: 56,
       comments: 8,
-      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
+      image: "https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/100/2024/07/09/9-mg2-Rambu-rambu-dilarang-parkir-roboh-ada-juga-yang-sampai-hilang-doni-2-792071909.jpg",
       isBookmarked: false,
       category: "infrastruktur",
-      location: "jl-sudirman"
+      location: "Jl Sudirman"
     },
     {
       id: 6,
@@ -100,10 +100,10 @@ const ReportPage = () => {
       views: 198,
       likes: 34,
       comments: 6,
-      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
+      image: "https://static.republika.co.id/uploads/images/inpicture_slide/suasana-salah-satu-halte-tmb-di-jalan-perintis-kemerdekaan-_160114180516-234.jpg",
       isBookmarked: true,
       category: "transportasi",
-      location: "jl-ahmad-yani"
+      location: "Jl. Ahmad Yani"
     },
     {
       id: 7,
@@ -113,10 +113,10 @@ const ReportPage = () => {
       views: 567,
       likes: 98,
       comments: 19,
-      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
+      image: "https://newskaltim.com/wp-content/uploads/2017/08/Tumpukan-sampah-di-drainase-Gunung-Kawi.-int.jpg",
       isBookmarked: false,
       category: "infrastruktur",
-      location: "jl-thamrin"
+      location: "Jl. Thamrin"
     },
     {
       id: 8,
@@ -126,10 +126,10 @@ const ReportPage = () => {
       views: 445,
       likes: 76,
       comments: 14,
-      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
+      image: "https://media.suara.com/pictures/653x366/2020/04/16/57701-ilustrasi-pedagang-dok-istimewa.jpg",
       isBookmarked: false,
       category: "akses",
-      location: "jl-diponegoro"
+      location: "Jl. Diponegoro"
     },
     {
       id: 9,
@@ -139,10 +139,10 @@ const ReportPage = () => {
       views: 623,
       likes: 112,
       comments: 27,
-      image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
+      image: "https://asset-2.tstatic.net/jabar/foto/bank/images/papan-reklame-di-kota-bandung-roboh.jpg",
       isBookmarked: true,
       category: "infrastruktur",
-      location: "jl-sudirman"
+      location: "Jl. Sudirman"
     }
   ];
 
@@ -166,11 +166,7 @@ const ReportPage = () => {
     // Search
     if (searchTerm) {
       filtered = filtered.filter((report) =>
-        report.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        report.tags.some((tag) =>
-          tag.toLowerCase().includes(searchTerm.toLowerCase())
-        )
-      );
+        report.title.toLowerCase().includes(searchTerm.toLowerCase()));
     }
 
     // Filter by category
