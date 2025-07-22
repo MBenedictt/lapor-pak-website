@@ -5,6 +5,8 @@ import Navbar from "../components/Navbar";
 import ReportCard from "../components/ReportCard";
 import Footer from "../components/Footer";
 import { useEffect, useState } from "react";
+import { PieChart, pieArcLabelClasses } from '@mui/x-charts/PieChart';
+import { LineChart } from '@mui/x-charts/LineChart';
 
 const reports = [
     {
@@ -50,6 +52,15 @@ const reports = [
         location: "Jl. Thamrin"
     },
 ];
+
+const data = [
+  { id: 0, value: 34, label: 'Infrastruktur' },
+  { id: 1, value: 26, label: 'Aksesibilitas' },
+  { id: 2, value: 22, label: 'Kondisi Jalan' },
+  { id: 3, value: 18, label: 'Transportasi' },
+];
+
+const redShades = ['#ef4444', '#dc2626', '#b91c1c', '#991b1b', '#7f1d1d'];
 
 const HomePage = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -208,6 +219,66 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Chart */}
+            <div className="w-full px-6 py-10 flex flex-col items-center justify-center bg-red-50">
+                <h1 className="text-5xl font-bold text-black text-center mb-10 max-sm:text-4xl max-sm:mb-6">
+                    Ringkasan Laporan
+                </h1>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-7xl">
+                    <div className="bg-white rounded-2xl shadow-md p-6 w-full">
+                    <h2 className="text-xl md:text-2xl font-bold text-black text-center mb-4 md:mb-5 lg:mb-6">
+                        Laporan berdasarkan kategori
+                    </h2>
+                    <PieChart
+                        series={[
+                        {
+                            data: data.map((item, index) => ({
+                            ...item,
+                            color: redShades[index % redShades.length],
+                            })),
+                            arcLabel: (item) => `${item.value}%`,
+                            arcLabelMinAngle: 15,
+                            arcLabelRadius: '60%',
+                            highlightScope: { fade: 'global', highlight: 'item' },
+                            faded: { innerRadius: 0, additionalRadius: -30, color: 'gray' },
+                            outerRadius: 100,
+                        },
+                        ]}
+                        sx={{
+                        [`& .${pieArcLabelClasses.root}`]: {
+                            fontWeight: 'bold',
+                            fill: 'white',
+                            fontSize: 12,
+                        },
+                        }}
+                        width={250}
+                        height={250}
+                    />
+                    </div>
+
+                    {/* Card 2 */}
+                    <div className="bg-white rounded-2xl shadow-md p-6 w-full">
+                    <h2 className="text-xl md:text-2xl font-bold text-black text-center mb-4 md:mb-5 lg:mb-6">
+                        Jumlah Laporan per Tahun
+                    </h2>
+                        <LineChart
+                        xAxis={[{ data: [2021, 2022, 2023, 2024, 2025], scaleType: 'point' }]}
+                        series={[
+                            {
+                            data: [800, 1200, 1500, 1800, 2000],
+                            color: '#ef4444',
+                            },
+                        ]}
+                        width={500}
+                        height={300}
+                        />
+                    </div>
+                </div>
+                </div>
+
+
 
             {/* Footer Section */}
             <Footer />
