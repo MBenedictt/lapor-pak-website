@@ -63,7 +63,7 @@ const CreatePage = () => {
                             <Tooltip message="Kembali">
                                 <button
                                     onClick={() => window.history.back()}
-                                    className="bg-gray-100 text-gray-500 hover:bg-gray-200 rounded-full"
+                                    className="cursor-pointer bg-gray-100 text-gray-500 hover:bg-gray-200 rounded-full"
                                 >
                                     <ArrowLeft className="w-8 h-8 p-1" />
                                 </button>
