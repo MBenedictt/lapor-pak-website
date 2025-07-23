@@ -23,40 +23,39 @@ const ReportCard = ({ report }) => {
   const [userVote, setUserVote] = useState(null); // 'up', 'down', or null
   const [isBookmarked, setIsBookmarked] = useState(initialBookmarked);
 
-  const handleUpvote = () => {
-    if (userVote === 'up') {
-      // Remove upvote
-      setUpvotes(prev => prev - 1);
+  const handleVote = (voteType) => { // voteType adalah 'up' atau 'down'
+    // Jika user menekan tombol yang sama lagi (membatalkan vote)
+    if (userVote === voteType) {
       setUserVote(null);
-    } else if (userVote === 'down') {
-      // Switch from downvote to upvote
-      setUpvotes(prev => prev + 1);
-      setDownvotes(prev => prev - 1);
-      setUserVote('up');
-    } else {
-      // Add upvote
-      setUpvotes(prev => prev + 1);
-      setUserVote('up');
+      if (voteType === 'up') {
+        setUpvotes(prev => prev - 1);
+      } else {
+        setDownvotes(prev => prev - 1);
+      }
+    } else { // Jika user memberi vote baru atau mengubah vote
+      // Hapus vote lama jika ada
+      if (userVote === 'up') {
+        setUpvotes(prev => prev - 1);
+      } else if (userVote === 'down') {
+        setDownvotes(prev => prev - 1);
+      }
+      
+      // Tambahkan vote baru
+      if (voteType === 'up') {
+        setUpvotes(prev => prev + 1);
+      } else {
+        setDownvotes(prev => prev + 1);
+      }
+      
+      // Set status vote yang baru
+      setUserVote(voteType);
     }
   };
 
-  const handleDownvote = () => {
-    if (userVote === 'down') {
-      // Remove downvote
-      setDownvotes(prev => prev - 1);
-      setUserVote(null);
-    } else if (userVote === 'up') {
-      // Switch from upvote to downvote
-      setUpvotes(prev => prev - 1);
-      setDownvotes(prev => prev + 1);
-      setUserVote('down');
-    } else {
-      // Add downvote
-      setDownvotes(prev => prev + 1);
-      setUserVote('down');
-    }
-  };
-
+  // Fungsi lama sekarang hanya memanggil fungsi utama
+  const handleUpvote = () => handleVote('up');
+  const handleDownvote = () => handleVote('down');
+  
   const handleReadPost = () => {
     window.open('#', '_blank');
   };
