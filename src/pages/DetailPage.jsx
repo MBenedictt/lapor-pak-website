@@ -49,19 +49,68 @@ const ReportDetailPage = () => {
 
     const otherReports = [
         {
-            id: 2,
-            title: "Trotoar Rusak Membahayakan Pejalan Kaki",
-            author: "peduliakses",
-            image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
-            location: "jl-ahmad-yani"
+            "id": 1,
+            "title": "Lampu Lalu Lintas Mati di Perempatan Jalan Sudirman",
+            "author": "warga01",
+            "image": "https://awsimages.detik.net.id/community/media/visual/2024/06/11/lampu-merah-di-bundaran-marlin-pangandaran-mati_169.jpeg?w=600&q=90",
+            "location": "Jl. Sudirman"
         },
         {
-            id: 3,
-            title: "Angkot Parkir Sembarangan Menutup Akses Jalan",
-            author: "guru_sd",
-            image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=200&fit=crop",
-            location: "jl-thamrin"
+            "id": 2,
+            "title": "Trotoar Rusak Membahayakan Pejalan Kaki di Jalan Ahmad Yani",
+            "author": "peduliakses",
+            "image": "https://static.republika.co.id/uploads/images/inpicture_slide/trotoar-untuk-pejalan-kaki-di-jalan-tb-simatupang-_190418200558-610.jpg",
+            "location": "Jl. Ahmad Yani"
         },
+        {
+            "id": 3,
+            "title": "Angkot Parkir Sembarangan Menutup Akses Jalan Sekolah",
+            "author": "guru_sd",
+            "image": "https://asset-2.tstatic.net/kupang/foto/bank/images/Angkota-Kupang-Mogok.jpg",
+            "location": "Jl. Thamrin"
+        },
+        {
+            "id": 4,
+            "title": "Jalan Berlubang di Dekat Pasar Membahayakan Pengendara Motor",
+            "author": "ojekonline",
+            "image": "https://asset.kompas.com/crops/cOidyNWqHEdnvx2cA9MOo6uFpsg=/0x0:0x0/1200x800/data/photo/2023/05/11/645cba808a376.jpg",
+            "location": "Jl. Diponegoro"
+        },
+        {
+            "id": 5,
+            "title": "Rambu Larangan Parkir Roboh di Persimpangan Utama",
+            "author": "warga02",
+            "image": "https://static.promediateknologi.id/crop/0x0:0x0/0x0/webp/photo/p2/100/2024/07/09/9-mg2-Rambu-rambu-dilarang-parkir-roboh-ada-juga-yang-sampai-hilang-doni-2-792071909.jpg",
+            "location": "Jl Sudirman"
+        },
+        {
+            "id": 6,
+            "title": "Halte Bus Tidak Terawat dan Kotor",
+            "author": "penumpang_bus",
+            "image": "https://static.republika.co.id/uploads/images/inpicture_slide/suasana-salah-satu-halte-tmb-di-jalan-perintis-kemerdekaan-_160114180516-234.jpg",
+            "location": "Jl. Ahmad Yani"
+        },
+        {
+            "id": 7,
+            "title": "Drainase Tersumbat Menyebabkan Banjir",
+            "author": "warga_rt05",
+            "image": "https://newskaltim.com/wp-content/uploads/2017/08/Tumpukan-sampah-di-drainase-Gunung-Kawi.-int.jpg",
+            "location": "Jl. Thamrin"
+        },
+        {
+            "id": 8,
+            "title": "Pedagang Kaki Lima Menutupi Trotoar",
+            "author": "pejalan_kaki",
+            "image": "https://media.suara.com/pictures/653x366/2020/04/16/57701-ilustrasi-pedagang-dok-istimewa.jpg",
+            "location": "Jl. Diponegoro"
+        },
+        {
+            "id": 9,
+            "title": "Papan Reklame Roboh Menghalangi Jalan",
+            "author": "saksi_mata",
+            "image": "https://asset-2.tstatic.net/jabar/foto/bank/images/papan-reklame-di-kota-bandung-roboh.jpg",
+            "location": "Jl. Sudirman"
+        }
     ];
 
     const initialComments = [
