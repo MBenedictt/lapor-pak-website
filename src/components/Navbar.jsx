@@ -109,7 +109,7 @@ const Navbar = () => {
                             </Link>
                         </li>
                         <li className="font-medium text-2xl py-4">
-                            <Link to="/" className="relative group flex w-fit">
+                            <Link to="/login" className="relative group flex w-fit">
                                 <span className="group-hover:after:w-full after:w-0 after:h-0.5 after:bg-black after:absolute after:bottom-0 after:left-0 after:transition-all after:duration-300">
                                     Login
                                 </span>
