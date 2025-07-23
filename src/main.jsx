@@ -12,6 +12,7 @@ import HomePage from './pages/HomePage';
 import ReportPage from './pages/ReportPage';
 import DetailPage from './pages/DetailPage';
 import CreatePage from './pages/CreatePage';
+import LoginPage from './pages/LoginPage';
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "create",
         element: <CreatePage />,
+      },
+      {
+        path: "login",
+        element: <LoginPage />,
       },
     ]
   },
