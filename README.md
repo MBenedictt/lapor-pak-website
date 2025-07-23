@@ -1,8 +1,5 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Cara Menjalankan Program
+1. Extract ZIP dan masuk ke dalam folder hasil extract
+2. Buka file lapor-pak-website-main di code editor seperti VSCode
+3. Buka Terminal dan ketik "npm install"
+4. Ketik "npm run dev" di terminal untuk menjalankan program
