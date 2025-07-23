@@ -49,13 +49,6 @@ const ReportDetailPage = () => {
 
     const otherReports = [
         {
-            "id": 1,
-            "title": "Lampu Lalu Lintas Mati di Perempatan Jalan Sudirman",
-            "author": "warga01",
-            "image": "https://awsimages.detik.net.id/community/media/visual/2024/06/11/lampu-merah-di-bundaran-marlin-pangandaran-mati_169.jpeg?w=600&q=90",
-            "location": "Jl. Sudirman"
-        },
-        {
             "id": 2,
             "title": "Trotoar Rusak Membahayakan Pejalan Kaki di Jalan Ahmad Yani",
             "author": "peduliakses",
