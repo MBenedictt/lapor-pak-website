@@ -319,7 +319,7 @@ const HomePage = () => {
                     </h2>
                     
                         <LineChart
-                        xAxis={[{ data: [2021, 2022, 2023, 2024, 2025], scaleType: 'point' }]}
+                        xAxis={[{ data: ["2021", "2022", "2023", "2024", "2025"], scaleType: 'point' }]}
                         series={[
                             {
                             data: [800, 1200, 1500, 1800, 2000],
