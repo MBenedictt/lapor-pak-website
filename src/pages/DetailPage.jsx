@@ -1,8 +1,10 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Comment from '../components/Comment';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { Tooltip } from '../components/Tooltip';
 import { Eye, ArrowBigUp, ArrowBigDown, MessageCircle, Bookmark, Share, SendHorizontal, Copy } from 'lucide-react';
 
@@ -40,6 +42,13 @@ const ReportDetailPage = () => {
         return flatList;
     };
 
+    useEffect(() => {
+        AOS.init({
+            disable: "phone",
+            duration: 1000,
+            easing: "ease-out-cubic",
+        });
+    }, []);
 
     const handleKeyPress = (e) => {
         if (e.key === 'Enter') {
@@ -228,7 +237,7 @@ const ReportDetailPage = () => {
             <main className="w-full px-4 md:px-10 lg:px-20 py-10 mt-[70px]">
                 <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
                     <div className="w-full lg:w-2/3">
-                        <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div className="bg-white rounded-lg shadow-md overflow-hidden" data-aos="zoom-in-up" data-aos-once="true">
                             <div className="p-6">
                                 <div className="flex items-center max-sm:flex-col max-sm:items-start max-sm:gap-1 gap-4 mb-4 text-sm text-gray-500">
                                     <span className="font-semibold text-black">lapor/{mainReport.category}</span> • Diposting oleh u/{mainReport.author} • {mainReport.date}
@@ -285,7 +294,7 @@ const ReportDetailPage = () => {
                         </div>
 
                         <div ref={commentSectionRef} className="mt-6">
-                            <div className="bg-white p-6 rounded-lg shadow-md">
+                            <div className="bg-white p-6 rounded-lg shadow-md" data-aos="fade-right" data-aos-once="true">
                                 <p className="mb-2 text-sm">Komentar sebagai <span className="text-red-600 font-semibold">Anda</span></p>
                                 <div className="flex w-full items-center gap-2">
                                     <input
@@ -304,7 +313,7 @@ const ReportDetailPage = () => {
                                     </button>
                                 </div>
                             </div>
-                            <div className="mt-6 space-y-6">
+                            <div className="mt-6 space-y-6" data-aos="fade-right" data-aos-once="true">
                                 {flattenComments(comments).map(comment => (
                                     <Comment
                                         key={comment.id}
@@ -318,7 +327,7 @@ const ReportDetailPage = () => {
                     </div>
 
                     <div className="w-full lg:w-1/3">
-                        <div className="bg-white p-4 rounded-lg shadow-md sticky top-[90px]">
+                        <div className="bg-white p-4 rounded-lg shadow-md sticky top-[90px]" data-aos="fade-left" data-aos-once="true">
 
                             <div className="mb-6">
                                 <h3 className="text-lg font-bold border-t border-gray-200 pt-4 pb-3 mb-4">Bagikan Laporan Ini</h3>
